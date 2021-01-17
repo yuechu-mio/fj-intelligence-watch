@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>音频插播/音频播放</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/AudioPlayback.css">
+
+	</head>
+	<body>
+    <div id="main">
+        <!--下拉选择器-->
+        <div>
+            <!--设备分组-->
+            <div class="selectF">
+              <div class="content" id="content1">选择设备分组
+              </div>
+              <img class="selectImg" id="selectImg1" src="../images/icon_select1.png" alt="">
+              <div class="selectItem" id="selectItem1">
+              </div>
+            </div>
+            <!--设备分类-->
+            <div class="selectF">
+              <div class="content" id="content2">选择设备分类
+              </div>
+              <img class="selectImg" id="selectImg2" src="../images/icon_select1.png" alt="">
+              <div class="selectItem" id="selectItem2">
+              </div>
+            </div>
+            <!--曲目选择-->
+            <div class="selectF">
+              <div class="content" id="content3">选择曲目
+              </div>
+              <img class="selectImg" id="selectImg3" src="../images/icon_select1.png" alt="">
+              <div class="selectItem" id="selectItem3">
+              </div>
+            </div>
+        </div>
+      <!-- 已选分组 -->
+      <div class="selected-group">
+        <span>已选分组：</span>
+      </div>
+      <!-- 底部 -->
+      <div class="bot">
+        <div class="bottom-item">
+          <!-- 播放类型 -->
+          <div class="playClass">
+            <span>播放类型：</span>
+            <label><input name="playClass" type="radio"> 音频播放</label>
+            <label><input name="playClass" type="radio"> 音频插播</label>
+          </div>
+          <!-- 播放次数 -->
+          <div class='volume-control'>
+            <span>播放次数：</span>
+            <span class='volume-control-item' @click="modifyNum('red')">-</span>
+            <span class="volume-control-num">7</span>
+            <span class='volume-control-item' @click="modifyNum('add')">+</span>
+          </div>
+          <!-- 确认插播 -->
+          <button class="play-btn">确认插播</button>
+        </div>
+      </div>
+        <!--播放次数/确认播放按钮-->
+       <!-- <div class="playBtn">
+
+        </div>-->
+    </div>
+	</body>
+  <script src="../js/SelectFn.js"></script>
+  <script>
+<!--    获取下拉选择器元素-->
+let data1 = [
+	{name:'余雪龙演示分组',value:'1'},
+  {name:'昆明测试分组',value:'2'},
+	{name:'余雪龙演示分组1',value:'3'},
+	{name:'余雪龙演示分组2',value:'4'},
+	{name:'余雪龙演示分组3',value:'5'},
+	{name:'余雪龙演示分组4',value:'6'},
+	{name:'余雪龙演示分组5',value:'7'},
+  {name:'丽江测试分组',value:'8'}]
+let content1 = document.getElementById('content1');
+let selectImg1 = document.getElementById('selectImg1');
+let selectItem1 = document.getElementById('selectItem1');
+SelectFn(data1,content1,selectImg1,selectItem1);
+let data2 = [{name:'类别1',value:'1'},{name:'类别2',value:'2'},{name:'类别3',value:'3'}]
+let content2 = document.getElementById('content2');
+let selectImg2 = document.getElementById('selectImg2');
+let selectItem2 = document.getElementById('selectItem2');
+SelectFn(data2,content2,selectImg2,selectItem2);
+
+let data3 = [{name:'曲目1',value:'1'},{name:'曲目2',value:'2'},{name:'曲目3',value:'3'}]
+let content3 = document.getElementById('content3');
+let selectImg3 = document.getElementById('selectImg3');
+let selectItem3 = document.getElementById('selectItem3');
+SelectFn(data3,content3,selectImg3,selectItem3);
+
+  </script>
+</html>

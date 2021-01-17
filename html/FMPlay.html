@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>FM播放</title>
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/FMPlay.css">
+	</head>
+	<body>
+  <div id="main">
+    <!-- 下拉选择器-->
+    <div>
+      <!--设备分组-->
+      <div class="selectF">
+        <div class="content" id="content1">选择设备
+        </div>
+        <img class="selectImg" id="selectImg1" src="../images/icon_select1.png" alt="">
+        <div class="selectItem" id="selectItem1">
+        </div>
+      </div>
+      <!--选择频道-->
+      <div class="selectF">
+        <div class="content" id="content2">选择频道
+        </div>
+        <img class="selectImg" id="selectImg2" src="../images/icon_select1.png" alt="">
+        <div class="selectItem" id="selectItem2">
+        </div>
+      </div>
+    </div>
+    <!--播放/暂停按钮-->
+    <div class="btnStatus">
+      <button>暂停FM</button>
+      <button>播放FM</button>
+    </div>
+  </div>
+	</body>
+  <script src="../js/SelectFn.js"></script>
+  <script>
+		<!--    获取下拉选择器元素-->
+		let data1 = [{name:'余雪龙演示分组',value:'1'},{name:'昆明测试分组',value:'2'},{name:'丽江测试分组',value:'3'}]
+		let content1 = document.getElementById('content1');
+		let selectImg1 = document.getElementById('selectImg1');
+		let selectItem1 = document.getElementById('selectItem1');
+		SelectFn(data1,content1,selectImg1,selectItem1);
+		let data2 = [{name:'频道1',value:'1'},{name:'频道2',value:'2'},{name:'频道3',value:'3'}]
+		let content2 = document.getElementById('content2');
+		let selectImg2 = document.getElementById('selectImg2');
+		let selectItem2 = document.getElementById('selectItem2');
+		SelectFn(data2,content2,selectImg2,selectItem2);
+  </script>
+</html>
